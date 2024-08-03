@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Rigidbody _playerRb;
+    private float _power = 10;
+
     void Start()
     {
-        
+        _playerRb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _playerRb.AddForce(Vector3.up * _power, ForceMode.Impulse);
+        }
     }
 }
