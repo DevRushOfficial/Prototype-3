@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody _playerRb;
-    private float _power = 10;
+    private float _jumpForce = 10;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _playerRb.AddForce(Vector3.up * _power, ForceMode.Impulse);
+            _playerRb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
         }
     }
 }
