@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody _playerRb;
-    private float _jumpForce = 10;
+    private float _power = 10;
 
     void Start()
     {
