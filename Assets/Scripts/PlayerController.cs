@@ -3,8 +3,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody _playerRb;
+    [SerializeField]
     private float _jumpForce = 10;
-    private float _gravityModifier;
+    [SerializeField]
+    private float _gravityModifier = 1;
+    private bool _isOnGround = true;
 
     void Start()
     {
@@ -14,9 +17,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _isOnGround)
         {
             _playerRb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            _isOnGround = false;
         }
     }
+
+    void OnCollisionEnter(Collision collision) => _isOnGround = true;
 }
