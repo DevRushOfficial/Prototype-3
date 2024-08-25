@@ -426,7 +426,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!114 &610541217
 MonoBehaviour:
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81346c2c2c7556469d8bc02ba5b7a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 2765297582612764148, guid: 4fe6075ccd5d65f4485b33a11210bd56, type: 3}
+  obstaclePrefab: {fileID: 2765297582612764148, guid: 4fe6075ccd5d65f4485b33a11210bd56, type: 3}
 --- !u!4 &1630635676
 Transform:
   m_ObjectHideFlags: 0
