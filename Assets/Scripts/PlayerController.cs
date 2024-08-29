@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody _playerRb;
     [SerializeField]
     private float _jumpForce = 10;
     [SerializeField]
     private float _gravityModifier = 1;
+    private Rigidbody _playerRb;
+
     private bool _isOnGround = true;
+    public bool _gameOver;
 
     void Start()
     {
@@ -24,5 +26,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision) => _isOnGround = true;
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            _isOnGround = true;
+        }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            _gameOver = true;
+            Debug.Log("Game is over!");
+        }
+    }
 }
