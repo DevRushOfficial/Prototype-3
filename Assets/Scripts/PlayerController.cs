@@ -6,10 +6,17 @@ public class PlayerController : MonoBehaviour
     private float _jumpForce = 10;
     [SerializeField]
     private float _gravityModifier = 1;
+
     private Rigidbody _playerRb;
 
     private bool _isOnGround = true;
-    public bool _gameOver;
+    private bool _gameOver = false;
+
+    public bool GameOver
+    {
+        get { return _gameOver; }
+        private set { _gameOver = value; }
+    }
 
     void Start()
     {
