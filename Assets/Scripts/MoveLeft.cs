@@ -12,6 +12,11 @@ public class MoveLeft : MonoBehaviour
 
     void Update()
     {
+        StopMoveLeft();
+    }
+
+    private void StopMoveLeft()
+    {
         if (!_playerController.GameOver)
         {
             transform.Translate(Vector3.left * Time.deltaTime * _speed);
