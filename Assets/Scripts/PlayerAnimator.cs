@@ -13,4 +13,10 @@ public class PlayerAnimator : MonoBehaviour
     {
         _playerAnimator.SetTrigger("Jump_trig");
     }
+
+    public void TriggerDeathAnimation()
+    {
+        _playerAnimator.SetBool("Death_b", true);
+        _playerAnimator.SetInteger("DeathType_int", 1);
+    }
 }
