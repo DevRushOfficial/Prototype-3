@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody _playerRb;
     private PlayerAnimator _playerAnimator;
+    public ParticleSystem explosionParticle;
 
     private bool _isOnGround = true;
     private bool _gameOver = false;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _isOnGround)
+        if (Input.GetKeyDown(KeyCode.Space) && _isOnGround && !_gameOver)
         {
             _playerRb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             _isOnGround = false;
@@ -45,8 +46,8 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             _gameOver = true;
-            _isOnGround = false;
             _playerAnimator.TriggerDeathAnimation();
+            explosionParticle.Play();
             Debug.Log("Game is over!");
         }
     }
