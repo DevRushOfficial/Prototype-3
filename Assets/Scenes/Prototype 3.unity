@@ -756,8 +756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9360ac16b928b3e48ad4aa0b8383f9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpSound: {fileID: 8300000, guid: 113ee460fadc340e4957a7404a9fbb27, type: 3}
   _crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
+  _jumpSound: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
 --- !u!1 &835818919
 GameObject:
   m_ObjectHideFlags: 0

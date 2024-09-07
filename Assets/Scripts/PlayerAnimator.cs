@@ -4,10 +4,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     private Animator _playerAnimator;
 
-    void Start()
-    {
-        _playerAnimator = GetComponent<Animator>();
-    }
+    void Start() => _playerAnimator = GetComponent<Animator>();
 
     public void TriggerJumpAnimation()
     {
